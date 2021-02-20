@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Стеллаж</title>
+    <link rel="icon" href="stack-icon.png" type="image/x-icon" sizes="32x32">
+    <script type="text/javascript" src="/templates/MainFuncs.js"></script>
+</head>
+<body>
+<link rel="stylesheet" href="front.css">
+<div>
+    <p class="title" align="center">Электронный склад</p>
+</div>
+
+<div class="table input" id="inputform">
+        <table class="table" align="left" border="1" cellspacing="0" cellpadding="4" id="table1">
+            <caption>Ввод накладной</caption>
+            <tr align="center">
+                <th>
+                  Наименование товара
+                </th>
+                <th>
+                    Высота
+                </th>
+                <th>
+                    Ширина
+                </th>
+                <th>
+                    Глубина
+                </th>
+                <th>
+                  Масса
+                </th>
+            </tr>
+            <tr>
+                <td align="center" >
+                    <input name="name"  class="table_name name" type="text" required="">
+                </td>
+                <td align="center">
+                    <input name="x"  class="table_text x" type="number" min="1" required="">
+                </td>
+                <td align="center">
+                    <input name="y"  class="table_text y" type="number" min="1" required="">
+                </td>
+                <td align="center">
+                    <input name="z"  class="table_text z" type="number" min="1" required="">
+                </td>
+                <td align="center">
+                    <input name="mass"  class="table_text mass" type="number" min="1" required="">
+                </td>
+            </tr>
+        </table>
+
+    <input class="shine-button" type="button" value="Добавить позицию" onclick="snd()" >
+    <input class="shine-button" type="button" value="Закрыть накладную" onclick="stp()" >
+
+</div>
+<div id="div_storg" class="table" hidden=''>
+
+</div>
+
+
+<div class="clear"></div>
+<div class="table">
+    <table id="naklad" align="left" border="1" cellspacing="0" cellpadding="4">
+        <caption>
+                Накладная
+        </caption>
+        <tr>
+            <th>
+                Наименование товара
+            </th>
+            <th>
+                    Высота
+            </th>
+            <th>
+                    Ширина
+            </th>
+            <th>
+                    Глубина
+            </th>
+            <th>
+                    Масса
+            </th>
+        </tr>
+    </table>
+    <div class="clear"></div>
+</div>
+<div id="tableData"></div>
+<div class="clear"></div>
+</body>
+</html>
