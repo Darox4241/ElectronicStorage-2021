@@ -169,23 +169,23 @@ def get_item():
         response = requests.get(base_url + '/position', dest)
         response = response.json()
         if response['status'] == 'ok':
-            return {"status": "ok"}
+            return {"status": "ok"}, 200
         elif response['status'] == 'position is empty':
             return {"status": "position is empty"}, 404
         else:
             return {"status": "position does not exist"}, 400
     else:
         dest = ({
-            "destination": [inPut[0]],
+            "destination": [inPut],
         })
         response = requests.get(base_url + '/position', dest)
         response = response.json()
         if response['status'] == 'ok':
-            return {"status": "ok"}
+            return {"status": "ok"}, 200
         elif response['status'] == 'position is empty':
-            return {"status": "position is empty"}
+            return {"status": "position is empty"}, 404
         else:
-            return {"status": "position does not exist"}
+            return {"status": "position does not exist"}, 400
 
 
 if __name__ == '__main__':
